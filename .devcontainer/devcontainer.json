@@ -2,11 +2,11 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    // "image": "Dockerfile",
-    "build": {
+    "image": "mcr.microsoft.com/devcontainers/dotnet:1-9.0-bookworm",
+    // "build": {
       // Path is relative to the devcontainer.json file.
-      "dockerfile": "Dockerfile"
-    },
+    //   "dockerfile": "Dockerfile"
+    // },
     "features": {
       "ghcr.io/devcontainers/features/dotnet:2": {
         "workloads": "aspire"
@@ -26,7 +26,7 @@
     // }
   
     // Use 'postCreateCommand' to run commands after the container is created.
-    //"postCreateCommand": ""
+    "postCreateCommand": "sudo bash ./.devcontainer/postCreateCommand.sh",
   
     // Configure tool-specific properties.
     "customizations": {
@@ -39,6 +39,7 @@
               "streetsidesoftware.code-spell-checker",
               "visualstudioexptteam.vscodeintellicode",
               "visualstudioexptteam.intellicode-api-usage-examples",
+              "Angular.ng-template",
               "ms-azuretools.vscode-docker"
           ],
           "settings": {
